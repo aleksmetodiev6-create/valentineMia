@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>💘 Валентинка</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 15px 35px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #no {
+            background-color: #444;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ще бъдеш ли моят Валентинка? ❤️</h1>
+    <button id="yes" onclick="openLove()">ДА</button>
+
+    <button id="no">НЕ</button>
+</div>
+<script>
+    const noBtn = document.getElementById("no");
+
+    noBtn.addEventListener("mouseover", () => {
+        const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+        noBtn.style.left = `${x}px`;
+        noBtn.style.top = `${y}px`;
+    });
+
+    function openLove() {
+        const win = window.open("", "_blank");
+        win.document.write(`
+            <html>
+            <head>
+                <title>❤️</title>
+                <style>
+                    body {
+                        height: 100vh;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+                        font-family: Arial, sans-serif;
+                        color: white;
+                        font-size: 3em;
+                        text-align: center;
+                    }
+                </style>
+            </head>
+            <body>
+                Знаех си 😍❤️<br><br>
+                Обичам те ❤️
+            </body>
+            </html>
+        `);
+    }
+</script>
